@@ -22,5 +22,5 @@ COPY --from=build /go/src/github.com/myuser/todo-terraform-provider-class/todo-l
 HEALTHCHECK --interval=15s --timeout=3s \
   CMD curl -f http://127.0.0.1/?limit=1 || exit 1
 
-ENTRYPOINT ["/todo-list-server"]
+ENTRYPOINT ["/todo-list-server"] 
 CMD ["--scheme=http", "--host=0.0.0.0", "--port=80"]
